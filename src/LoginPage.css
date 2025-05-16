@@ -1,0 +1,332 @@
+/* Color Palette */
+:root {
+    --green-50: #E8F5E9;
+    --green-100: #C8E6C9;
+    --green-200: #A5D6A7;
+    --green-300: #81C784;
+    --green-400: #66BB6A;
+    --green-500: #4CAF50;
+    --green-600: #43A047;
+    --green-700: #388E3C;
+    --green-800: #2E7D32;
+    --green-900: #1B5E20;
+  }
+  
+  /* Base Styles */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./port.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    position: relative;
+    backdrop-filter: blur(4px);
+  }
+  
+  .login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--green-400), var(--green-600));
+  }
+  
+  /* Header Styles */
+  .login-header {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Optional: use this only if you also want vertical centering */
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--green-100);
+    border-radius: 50%;
+  }
+  
+  .login-header h1 {
+    margin: 0 0 8px;
+    color: var(--green-900);
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .login-header p {
+    margin: 0;
+    color: var(--green-600);
+    font-size: 14px;
+  }
+  
+  /* Form Styles */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--green-200);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--green-400);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  }
+  
+  .form-group input::placeholder {
+    color: var(--green-400);
+  }
+  
+  .input-error {
+    border-color: #e53935 !important;
+    background-color: #FFEBEE !important;
+  }
+  
+  .error-icon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: #e53935;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .error-text {
+    color: #e53935;
+    font-size: 12px;
+    margin-top: 6px;
+    padding-left: 4px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .error-message {
+    background-color: #FFEBEE;
+    color: #e53935;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  /* Form Options */
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--green-700);
+    width: 100%;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    height: 18px;
+    width: 18px;
+    background-color: var(--green-100);
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.2s;
+  }
+  
+  .checkbox-container:hover input ~ .checkmark {
+    background-color: var(--green-200);
+  }
+  
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: var(--green-500);
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .form-options a {
+    color: var(--green-600);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .form-options a:hover {
+    color: var(--green-800);
+    text-decoration: underline;
+  }
+  
+  /* Button Styles */
+  .login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--green-600);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .login-btn:hover {
+    background-color: var(--green-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+  }
+  
+  .login-btn:active {
+    transform: translateY(0);
+  }
+  
+  .login-btn:disabled {
+    background-color: var(--green-300);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Footer Styles */
+  .login-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--green-600);
+  }
+  
+  .login-footer a {
+    color: var(--green-700);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .login-footer a:hover {
+    color: var(--green-900);
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .login-card {
+      padding: 30px 20px;
+      margin: 20px;
+    }
+    
+    .form-options {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    
+    .form-options a {
+      align-self: flex-end;
+    }
+  }
+  .logo img.ocp-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  
